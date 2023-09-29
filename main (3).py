@@ -1,20 +1,53 @@
+# Python program to create Bankaccount class
+
+# with both a deposit() and a withdraw() function
 
 
+class Bank_Account:
+
+  def __init__(self):
+
+    self.balance = 0
+
+    print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
+
+  def deposit(self):
+
+    amount = float(input("Enter amount to be Deposited: "))
+
+    self.balance += amount
+
+    print("\n Amount Deposited:", amount)
+
+  def withdraw(self):
+
+    amount = float(input("Enter amount to be Withdrawn: "))
+
+    if self.balance >= amount:
+
+      self.balance -= amount
+
+      print("\n You Withdrew:", amount)
+
+    else:
+
+      print("\n Insufficient balance  ")
+
+  def display(self):
+
+    print("\n Net Available Balance=", self.balance)
 
 
-def fact_rec(n):
+# Driver code
 
-  if n==0 or n==1:
+# creating an object of class
 
-     return 1
+s = Bank_Account()
 
-  else:
+# Calling functions with that class object
 
-    return n* fact_rec(n-1)
+s.deposit()
 
-number=int(input("enter a value"))  
+s.withdraw()
 
-res=fact_rec(number)
-
-print("the factroial of {}is{}.".format(number,res))
-
+s.display()
